@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.left-side-container {
+  position: sticky;
+  align-self: flex-start; /* Need this for position sticky to work when also using flexbox - Source: https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox */
+  top: 0;
+  margin-right: 40px;
+  margin-left: 20px;
+}
+
+.center-container {
+  position: relative;
+  margin-right: 30px;
+
+  width: 598px;
+}
+
+.top-nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(
+    --background-color
+  ); /* Give background color so it appears over elements scrolling under it */
+
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  height: 53px;
+
+  cursor: pointer;
+}
+
+.top-nav > div {
+  padding: 15px;
+  line-height: 1.3125;
+  color: var(--primary-text-color);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.top-nav > fa-icon {
+  margin-left: auto;
+  margin-right: 15px;
+  align-self: center;
+  color: #1da1f2;
+  font-size: 19px;
+}
+
+/* Javascript class makes this scrollable (if overflowing) even when mouse isn't hovering over it. */
+#right-side-container {
+  /* Will stick to top of screen */
+  position: sticky;
+  top: 0;
+
+  width: 388px;
+  height: 100vh; /* Must specify height for this to be sticky. Otherwise it auto sets height to the height of the entire site */
+
+  overflow: scroll;
+  scrollbar-width: none; /* Hide scroll bar in Firefox */
+}
+
+/* Hide scroll bar in Chrome and Edge*/
+#right-side-container::-webkit-scrollbar {
+  width: 0;
+}
+
+/* max-width means if width is less than this. */
+@media (max-width: 1000px) {
+  .left-side-container {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 1022px) {
+  .left-side-container {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 1095px) {
+  #right-side-container {
+    display: none;
+  }
+}
