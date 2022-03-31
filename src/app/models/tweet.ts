@@ -1,13 +1,15 @@
 import { User } from "./User";
 
 export interface Tweet {
-  id:number;
-  user_id: number;
-  description: string;
-  tag: string;
-  likes: number;
-  retweets:number;
-  img:string;
+  fname: string;
+    username: string;
+    id:number;
+    user_id: number;
+    description: string;
+    tag: string;
+    likes: number;
+    retweets:number;
+    img:string;
 
 
 }

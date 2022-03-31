@@ -2,14 +2,14 @@
   <img src="" class="profile-image" />
   <div class="content-container">
     <header>
-      <span class="name"></span>
-      <span>hi</span>
-      <span>·</span>
+      <span class="name">{{tweet.fname}}</span>
+      <span>@</span>
+      <span>{{tweet.username}}</span>
       <span></span>
       <mat-icon></mat-icon>
     </header>
     <main>
-      <div></div>
+      <div>{{tweet.description}}</div>
     </main>
     <footer>
       <fa-icon [icon]="faComment" class=""></fa-icon>

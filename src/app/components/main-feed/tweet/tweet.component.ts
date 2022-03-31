@@ -27,6 +27,7 @@ export class TweetComponent implements OnInit {
   ngOnInit(): void {
     this.colorThemeService.ColorTheme$.subscribe((data) => {
       this.colorTheme = data;
+      console.log(this.tweet.description);
     });
   }
 }

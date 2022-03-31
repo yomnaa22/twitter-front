@@ -21,9 +21,11 @@ import { ArticleComponent } from './components/whats-happening/article/article.c
 import { WhoToFollowComponent } from './components/who-to-follow/who-to-follow.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, TweetsComponent, TweetComponent, ColorThemeToggleComponent, SideBarComponent, WhatsHappeningComponent, TweetComposerComponent, PromotionComponent, TrendingComponent, ArticleComponent, WhoToFollowComponent, ProfileComponent],
+  declarations: [AppComponent, TweetsComponent, TweetComponent, ColorThemeToggleComponent, SideBarComponent, WhatsHappeningComponent, TweetComposerComponent, PromotionComponent, TrendingComponent, ArticleComponent, WhoToFollowComponent, ProfileComponent, LoginComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatIconModule, FontAwesomeModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

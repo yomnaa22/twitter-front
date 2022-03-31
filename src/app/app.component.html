@@ -1,19 +1,21 @@
-<div class="container">
-  <app-color-theme-toggle></app-color-theme-toggle>
+<div class="container" *ngIf="active==true">
+  <app-color-theme-toggle *ngIf="active==true"></app-color-theme-toggle>
   <div class="left-side-container">
-    <app-side-bar></app-side-bar>
+    <app-side-bar *ngIf="active==true"></app-side-bar>
   </div>
   <div class="center-container">
     <div class="top-nav">
       <div>Home</div>
       <fa-icon [icon]="faStar" class=""></fa-icon>
     </div>
-    <app-tweet-composer></app-tweet-composer>
-    <app-tweets></app-tweets>
+    <app-tweet-composer *ngIf="active==true"></app-tweet-composer>
+    <app-tweets *ngIf="active==true"></app-tweets>
   </div>
   <div id="right-side-container">
-    <app-whats-happening></app-whats-happening>
-    <app-who-to-follow></app-who-to-follow>
+    <app-whats-happening *ngIf="active==true"></app-whats-happening>
+    <app-who-to-follow *ngIf="active==true"></app-who-to-follow>
   </div>
   
 </div>
+
+<app-profile *ngIf="active1==true"></app-profile>

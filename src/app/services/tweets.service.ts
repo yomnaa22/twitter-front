@@ -14,7 +14,7 @@ export interface data {
     likes: number;
     retweets:number;
     img:string;
-      
+
 }
 @Injectable({
   providedIn: 'root'
@@ -23,8 +23,8 @@ export interface data {
 export class TweetsService {
 
   constructor(private httpClient: HttpClient) { }
-  getAlltweets(): Observable<Tweet[]> {
+  getAlltweets(): Observable<data[]> {
 
-    return this.httpClient.get<Tweet[]>(`${environment.baseUrl}tweets`);
+    return this.httpClient.get<data[]>(`${environment.baseUrl}followingtweet/1`);
 }
 }

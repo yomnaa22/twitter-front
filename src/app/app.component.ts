@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { faStar } from '@fortawesome/free-regular-svg-icons'
 
 @Component({
@@ -11,9 +12,49 @@ export class AppComponent {
   faStar = faStar;
 
   prevScrollBarPosition: number;
+  active: boolean=false;
+  active1: boolean=false;
+  url2:string="/profile";
+  url1:string="/home";
+  
+  routeurl1!:string
+  routeurl2!:string
 
-  constructor() {
-  }
+  active3:boolean=false;
+  logindash:string="/dashboard/login"
+  routeurl3!:string
+
+  constructor(public router: Router) {
+
+  this.router.events.subscribe(events => {
+    if (events instanceof NavigationEnd) {
+      this.routeurl1 = this.router.url.slice(0, 5);
+  this.routeurl2 = this.router.url.slice(0,8);
+    
+   console.log(this.routeurl1);
+
+    if(this.url1==this.routeurl1){
+        this.active=true
+        this.active1=false
+    
+
+      }
+   
+
+      else if(this.url2==this.routeurl2){
+        this.active1=true
+        this.active=false
+     
+      }
+console.log(this.active);
+     
+    // console.log(this.active,this.active1,this.active3,this.routeurl3);
+
+    }
+    
+  });
+}
+  
 
   ngOnInit(): void {
     const rightSideContainer = document.getElementById("right-side-container");
@@ -64,5 +105,7 @@ export class AppComponent {
       return delta;
     };
   };
+
 }
+
 

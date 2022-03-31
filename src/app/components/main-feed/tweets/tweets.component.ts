@@ -32,7 +32,8 @@ Arr:Tweet[];
     this.tweetService.getAlltweets().subscribe(
       (res) => {
         this.tweets = res;
-        console.log(this.tweets);
+        console.log(this.tweets[0].description);
+
       },
       (err) => {
         console.log('cant load data');
